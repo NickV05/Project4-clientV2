@@ -212,13 +212,6 @@ a, button {
   width: 200%;
   @apply absolute top-0 left-0 h-full;
 }
-.header_image {
-  @apply lg:absolute top-0 right-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0;
-}
-.header_image img {
-  @apply max-w-full lg:w-auto xl:max-w-screen-md;
-}
-
 
 .single_services {
   @apply border-2 border-dashed border-border-color rounded-xl py-13 px-6 sm:py-6 sm:px-4 md:py-13 md:px-6 transition-all duration-300  hover:border-theme-color hover:shadow;
@@ -243,9 +236,7 @@ a, button {
 .about_image {
   @apply lg:absolute top-0 left-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0; 
 }
-.about_image img {
-  @apply max-w-full lg:w-auto lg:max-w-screen-md;
-}
+
 .about_check i {
   @apply w-7 h-7 flex items-center justify-center text-white bg-theme-color rounded-full text-base mt-1;
 }
@@ -348,10 +339,7 @@ a, button {
 .contact_image {
   @apply lg:absolute top-0 left-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0; 
 }
-.contact_image img {
-  @apply max-w-full lg:max-w-screen-md lg:w-auto;
-  max-width: 770px;
-}
+
 .contact-btn {
   @apply bg-theme-color text-white py-4 px-10 rounded-md hover:bg-opacity-80;
 }

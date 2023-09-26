@@ -489,7 +489,6 @@ samp {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img,
 svg,
 video,
 canvas,
@@ -508,7 +507,6 @@ object {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img,
 video {
   max-width: 100%;
   height: auto;
@@ -1510,9 +1508,6 @@ a, button {
   }
 }
 
-.header_image img {
-  max-width: 100%;
-}
 
 @media (min-width: 960px){
   .header_image img{

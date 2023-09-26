@@ -1,12 +1,12 @@
 const NavbarComp = () => {
   return (
-    <div className="navbar-area ">
+    <div className="navbar-area bg-white ">
             <div className="container relative">
                 <div className="row items-center">
                     <div className="w-full">
-                        <nav className="flex items-center justify-between py-4 navbar navbar-expand-lg">
-                            <a className="navbar-brand mr-5" href="index.html">
-                                <img src="/public/logo.svg" alt="Logo"/>
+                        <nav className="flex items-center justify-between navbar navbar-expand-lg">
+                            <a className="navbar-brand" href="index.html">
+                                <img src="/public/hosp.jpg" className =" w-1/3" />
                             </a>
                             <button className="block navbar-toggler focus:outline-none lg:hidden" 
                             type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" 
