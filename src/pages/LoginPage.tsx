@@ -2,7 +2,6 @@ import { useState, useContext, ChangeEvent, FormEvent } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import { post } from "../services/authService";
-
 import {
   Input,
   Ripple,
