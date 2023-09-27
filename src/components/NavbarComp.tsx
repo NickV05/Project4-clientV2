@@ -5,7 +5,7 @@ const NavbarComp = () => {
                 <div className="row items-center">
                     <div className="w-full">
                         <nav className="flex items-center justify-between navbar navbar-expand-lg">
-                            <a className="navbar-brand" href="index.html">
+                            <a className="navbar-brand py-3" href="index.html">
                                 <img src="/public/hosp.jpg" className =" w-1/3" />
                             </a>
                             <button className="block navbar-toggler focus:outline-none lg:hidden" 
