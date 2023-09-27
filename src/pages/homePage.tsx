@@ -300,8 +300,7 @@ const homePage = () => {
             <div className="row justify-center">
                 <div className="w-ull lg:w-1/2">
                     <div className="section_title text-center pb-6">
-                        <h5 className="sub_title">Works</h5>
-                        <h4 className="main_title">Some of Our Recent Works</h4>
+                        <h4 className="main_title">News at Park West Medicare Center</h4>
                     </div> 
                 </div>
             </div> 
@@ -317,69 +316,13 @@ const homePage = () => {
                                 </div>
                                 <div className="work_content">
                                     <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">Marketing</a></h4>
+                                    <h4 className="work_title text-xl md:text-2xl"><a href="https://www.mountsinai.org/about/newsroom/2023/the-mount-sinai-hospital-commemorates-seventy-fifth-anniversary-of-first-dialysis-procedure-with-continuing-medical-education-event">Dialysis 75th Anniversary</a></h4>
                                     <p className="mt-2">NoCodeAPI</p>
                                 </div>
                             </div>
                         </div> 
                     </div>
-                    <div className="w-full lg:w-3/12">
-                        <div className="single_item mx-auto">
-                            <div className="single_work mx-3">
-                                <div className="work_image">
-                                    <img src="/work-2.jpg" alt="work" className="w-full"/>
-                                </div>
-                                <div className="work_content">
-                                    <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">Creative Design</a></h4>
-                                    <p className="mt-2">UIdeck</p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                    <div className="w-full lg:w-3/12">
-                        <div className="single_item mx-auto">
-                            <div className="single_work mx-3">
-                                <div className="work_image">
-                                    <img src="/work-3.jpg" alt="work" className="w-full"/>
-                                </div>
-                                <div className="work_content">
-                                    <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">Web Design</a></h4>
-                                    <p className="mt-2">GrayGrids</p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                    <div className="w-full lg:w-3/12">
-                        <div className="single_item mx-auto">
-                            <div className="single_work mx-3">
-                                <div className="work_image">
-                                    <img src="/work-4.jpg" alt="work" className="w-full"/>
-                                </div>
-                                <div className="work_content">
-                                    <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">Analysis</a></h4>
-                                    <p className="mt-2">Ayro UI</p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-
-                    <div className="w-full lg:w-3/12">
-                        <div className="single_item mx-auto">
-                            <div className="single_work mx-3">
-                                <div className="work_image">
-                                    <img src="/work-4.jpg" alt="work" className="w-full"/>
-                                </div>
-                                <div className="work_content">
-                                    <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">Analysis</a></h4>
-                                    <p className="mt-2">Ayro UI</p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
+                    
 
                     <div className="w-full lg:w-3/12">
                         <div className="single_item mx-auto">
@@ -389,7 +332,7 @@ const homePage = () => {
                                 </div>
                                 <div className="work_content">
                                     <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">SMM</a></h4>
+                                    <h4 className="work_title text-xl md:text-2xl"><a href="https://www.eurekalert.org/news-releases/980058">COVID-19 vaccination</a></h4>
                                     <p className="mt-2">LineIcons</p>
                                 </div>
                             </div>
@@ -403,7 +346,7 @@ const homePage = () => {
                                 </div>
                                 <div className="work_content">
                                     <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">SEO</a></h4>
+                                    <h4 className="work_title text-xl md:text-2xl"><a href="https://www.mountsinai.org/about/newsroom/2023/mount-sinai-health-system-and-usta-expand-exclusive-partnership-through-twenty-twenty-six">Mt. Sinai Partnership</a></h4>
                                     <p className="mt-2">PageBulb</p>
                                 </div>
                             </div>
@@ -413,11 +356,11 @@ const homePage = () => {
                         <div className="single_item mx-auto">
                             <div className="single_work mx-3">
                                 <div className="work_image">
-                                    <img src="/work-4.jpg" alt="work" className="w-full"/>
+                                    <img src="/grand.png" alt="work" className="w-full"/>
                                 </div>
                                 <div className="work_content">
                                     <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">Mobile App</a></h4>
+                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">Grand Opening</a></h4>
                                     <p className="mt-2">Rocket Internet LTD</p>
                                 </div>
                             </div>
