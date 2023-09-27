@@ -145,7 +145,7 @@ const homePage = () => {
     <section id="why" className="about_area pt-120 relative">
         <div className="about_image flex items-end justify-end">
             <div className="image lg:pr-13">
-                <img src="/about.svg" alt="about"/>
+                <img src="/public/matt.gif" alt="about"/>
             </div>
         </div> 
         <div className="container">
@@ -312,12 +312,11 @@ const homePage = () => {
                         <div className="single_item mx-auto">
                             <div className="single_work mx-3">
                                 <div className="work_image">
-                                    <img src="/work-1.jpg" alt="work" className="w-full"/>
+                                    <img src="/dialysis.jpg" alt="work" className="w-full"/>
                                 </div>
                                 <div className="work_content">
-                                    <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="https://www.mountsinai.org/about/newsroom/2023/the-mount-sinai-hospital-commemorates-seventy-fifth-anniversary-of-first-dialysis-procedure-with-continuing-medical-education-event">Dialysis 75th Anniversary</a></h4>
-                                    <p className="mt-2">NoCodeAPI</p>
+                                    <a href="https://www.mountsinai.org/about/newsroom/2023/the-mount-sinai-hospital-commemorates-seventy-fifth-anniversary-of-first-dialysis-procedure-with-continuing-medical-education-event" className="arrow"><i><img src = "/page.png"/></i></a>
+                                    <h4 className="work_title text-xl md:text-2xl text-center"><a href="https://www.mountsinai.org/about/newsroom/2023/the-mount-sinai-hospital-commemorates-seventy-fifth-anniversary-of-first-dialysis-procedure-with-continuing-medical-education-event">Dialysis 75th Anniversary</a></h4>
                                 </div>
                             </div>
                         </div> 
@@ -328,12 +327,11 @@ const homePage = () => {
                         <div className="single_item mx-auto">
                             <div className="single_work mx-3">
                                 <div className="work_image">
-                                    <img src="/work-5.jpg" alt="work" className="w-full"/>
+                                    <img src="/covid.jpg" alt="work" className="w-full"/>
                                 </div>
                                 <div className="work_content">
-                                    <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="https://www.eurekalert.org/news-releases/980058">COVID-19 vaccination</a></h4>
-                                    <p className="mt-2">LineIcons</p>
+                                <a href="https://www.eurekalert.org/news-releases/980058" className="arrow"><i><img src = "/page.png"/></i></a>
+                                    <h4 className="work_title text-xl md:text-2xl text-center"><a href="https://www.eurekalert.org/news-releases/980058">COVID-19 vaccination</a></h4>
                                 </div>
                             </div>
                         </div> 
@@ -342,12 +340,11 @@ const homePage = () => {
                         <div className="single_item mx-auto">
                             <div className="single_work mx-3">
                                 <div className="work_image">
-                                    <img src="/work-2.jpg" alt="work" className="w-full"/>
+                                    <img src="/sinai.jpg" alt="work" className="w-full"/>
                                 </div>
                                 <div className="work_content">
-                                    <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="https://www.mountsinai.org/about/newsroom/2023/mount-sinai-health-system-and-usta-expand-exclusive-partnership-through-twenty-twenty-six">Mt. Sinai Partnership</a></h4>
-                                    <p className="mt-2">PageBulb</p>
+                                <a href="https://www.mountsinai.org/about/newsroom/2023/mount-sinai-health-system-and-usta-expand-exclusive-partnership-through-twenty-twenty-six" className="arrow"><i><img src = "/page.png"/></i></a>
+                                    <h4 className="work_title text-xl md:text-2xl text-center"><a href="https://www.mountsinai.org/about/newsroom/2023/mount-sinai-health-system-and-usta-expand-exclusive-partnership-through-twenty-twenty-six">Mt. Sinai Partnership</a></h4>
                                 </div>
                             </div>
                         </div> 
@@ -359,9 +356,8 @@ const homePage = () => {
                                     <img src="/grand.png" alt="work" className="w-full"/>
                                 </div>
                                 <div className="work_content">
-                                    <a href="#" className="arrow"><i className="lni lni-chevron-right"></i></a>
-                                    <h4 className="work_title text-xl md:text-2xl"><a href="#">Grand Opening</a></h4>
-                                    <p className="mt-2">Rocket Internet LTD</p>
+                                <a href="https://expressapp.adaptable.app/forum/details/651473f3263b65a26bf6091d" className="arrow"><i><img src = "/page.png"/></i></a>
+                                    <h4 className="work_title text-xl md:text-2xl text-center"><a href="https://expressapp.adaptable.app/forum/details/651473f3263b65a26bf6091d">Grand Opening</a></h4>
                                 </div>
                             </div>
                         </div> 
@@ -383,11 +379,12 @@ const homePage = () => {
             </div> 
             <div className="team-wrapper relative">
                 <div className="row team_active">
+
                     <div className="w-full lg:w-4/12">
                         <div className="single_team_item mx-auto">
                             <div className="single_team mx-3">
                                 <div className="team_image relative">
-                                    <img src="/team-1.jpg" alt="team" className="w-full"/>
+                                    <img src="/wong.gif" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
                                         <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
                                         <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
@@ -395,26 +392,8 @@ const homePage = () => {
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Chris Dave</a></h4>
-                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">Founder and CEO</p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                    <div className="w-full lg:w-4/12">
-                        <div className="single_team_item mx-auto">
-                            <div className="single_team mx-3">
-                                <div className="team_image relative">
-                                    <img src="/team-3.jpg" alt="team" className="w-full"/>
-                                    <ul className="social absolute top-4 right-8">
-                                        <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Sarah Doe</a></h4>
-                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">UI Designer</p>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Ada Wong</a></h4>
+                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">Sport Geneticist</p>
                                 </div>
                             </div> 
                         </div>
@@ -424,7 +403,7 @@ const homePage = () => {
                         <div className="single_team_item mx-auto">
                             <div className="single_team mx-3">
                                 <div className="team_image relative">
-                                    <img src="/team-3.jpg" alt="team" className="w-full"/>
+                                    <img src="/evelyn.gif" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
                                         <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
                                         <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
@@ -432,8 +411,8 @@ const homePage = () => {
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Sarah Doe</a></h4>
-                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">UI Designer</p>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Evelyn Marcus</a></h4>
+                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">Neurologist</p>
                                 </div>
                             </div> 
                         </div>
@@ -443,7 +422,7 @@ const homePage = () => {
                         <div className="single_team_item mx-auto">
                             <div className="single_team mx-3">
                                 <div className="team_image relative">
-                                    <img src="/team-3.jpg" alt="team" className="w-full"/>
+                                    <img src="/public/lady.jpg" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
                                         <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
                                         <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
@@ -451,8 +430,8 @@ const homePage = () => {
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Sarah Doe</a></h4>
-                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">UI Designer</p>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Olivia Doe</a></h4>
+                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">Oncologyst</p>
                                 </div>
                             </div> 
                         </div>
@@ -462,7 +441,7 @@ const homePage = () => {
                         <div className="single_team_item mx-auto">
                             <div className="single_team mx-3">
                                 <div className="team_image relative">
-                                    <img src="/team-5.jpg" alt="team" className="w-full"/>
+                                    <img src="/doc.jpg" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
                                         <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
                                         <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
@@ -470,17 +449,18 @@ const homePage = () => {
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Rob Hope</a></h4>
-                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">Dr. Software Engineer</p>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Sarah Hope</a></h4>
+                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">Surgeon</p>
                                 </div>
                             </div> 
                         </div>
                     </div>
+
                     <div className="w-full lg:w-4/12">
                         <div className="single_team_item mx-auto">
                             <div className="single_team mx-3">
                                 <div className="team_image relative">
-                                    <img src="/team-2.jpg" alt="team" className="w-full"/>
+                                    <img src="/public/doctor.gif" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
                                         <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
                                         <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
@@ -488,12 +468,32 @@ const homePage = () => {
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Micheal Jordan</a></h4>
-                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">Business Development Manager</p>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Sam Isaacs</a></h4>
+                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">Lead Pharmacist</p>
                                 </div>
                             </div> 
                         </div>
                     </div>
+
+                    <div className="w-full lg:w-4/12">
+                        <div className="single_team_item mx-auto">
+                            <div className="single_team mx-3">
+                                <div className="team_image relative">
+                                    <img src="/chang.jpg" alt="team" className="w-full"/>
+                                    <ul className="social absolute top-4 right-8">
+                                        <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
+                                        <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
+                                        <li><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div className="team_content py-5 px-8 relative">
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Ruby Chang</a></h4>
+                                    <p className="mt-2 transition-all duration-300 group-hover:text-white">Dermatologyst</p>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    
                 </div> 
             </div>
         </div> 

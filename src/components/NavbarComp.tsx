@@ -1,6 +1,6 @@
 const NavbarComp = () => {
   return (
-    <div className="navbar-area bg-white ">
+    <div className="navbar-area bg-white  ">
             <div className="container relative">
                 <div className="row items-center">
                     <div className="w-full">
@@ -30,10 +30,10 @@ const NavbarComp = () => {
                                         <a className="page-scroll" href="#services">Services</a>
                                     </li>
                                     <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll" href="#work">Projects</a>
+                                        <a className="page-scroll" href="#work">News</a>
                                     </li>
                                     <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll" href="#pricing">Pricing</a>
+                                        <a className="page-scroll" href="#team">Team</a>
                                     </li>
                                     <li className="nav-item ml-5 lg:ml-11">
                                         <a className="page-scroll" href="#blog">Blog</a>
