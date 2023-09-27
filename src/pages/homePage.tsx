@@ -145,7 +145,7 @@ const homePage = () => {
     <section id="why" className="about_area pt-120 relative">
         <div className="about_image flex items-end justify-end">
             <div className="image lg:pr-13">
-                <img src="/public/matt.gif" alt="about"/>
+                <img src="/matt.gif" alt="about"/>
             </div>
         </div> 
         <div className="container">
@@ -386,9 +386,9 @@ const homePage = () => {
                                 <div className="team_image relative">
                                     <img src="/wong.gif" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
-                                        <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
+                                        <li><a href="https://twitter.com/Ada_Wong_IG"><i><img src = "/twit-white.png"/></i></a></li>
+                                        <li><a href="https://www.facebook.com/AdaWongLover/"><i><img src = "/facebook-white.png"/></i></a></li>
+                                        <li><a href="https://en.wikipedia.org/wiki/Ada_Wong#:~:text=She%20survives%20an%20accidental%20T,virus%20and%20resumes%20her%20espionage."><i><img src = "/wiki-white.png"/></i></a></li>
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
@@ -405,9 +405,9 @@ const homePage = () => {
                                 <div className="team_image relative">
                                     <img src="/evelyn.gif" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
-                                        <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
+                                        <li><a href="https://twitter.com/paonunezmexico"><i><img src = "/twit-white.png"/></i></a></li>
+                                        <li><a href="https://www.facebook.com/paolanunezactriz/"><i><img src = "/facebook-white.png"/></i></a></li>
+                                        <li><a href="https://residentevil.fandom.com/wiki/Evelyn_Marcus"><i><img src = "/wiki-white.png"/></i></a></li>
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
@@ -422,12 +422,7 @@ const homePage = () => {
                         <div className="single_team_item mx-auto">
                             <div className="single_team mx-3">
                                 <div className="team_image relative">
-                                    <img src="/public/lady.jpg" alt="team" className="w-full"/>
-                                    <ul className="social absolute top-4 right-8">
-                                        <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
-                                    </ul>
+                                    <img src="/lady.jpg" alt="team" className="w-full"/>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
                                     <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Olivia Doe</a></h4>
@@ -442,11 +437,6 @@ const homePage = () => {
                             <div className="single_team mx-3">
                                 <div className="team_image relative">
                                     <img src="/doc.jpg" alt="team" className="w-full"/>
-                                    <ul className="social absolute top-4 right-8">
-                                        <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
-                                    </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
                                     <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Sarah Hope</a></h4>
@@ -460,11 +450,11 @@ const homePage = () => {
                         <div className="single_team_item mx-auto">
                             <div className="single_team mx-3">
                                 <div className="team_image relative">
-                                    <img src="/public/doctor.gif" alt="team" className="w-full"/>
+                                    <img src="/doctor.gif" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
-                                        <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
+                                        <li><a href="https://twitter.com/IainGlenFan"><i><img src = "/twit-white.png"/></i></a></li>
+                                        <li><a href="https://www.facebook.com/people/Iain-Glen/100063555917651/"><i><img src = "/facebook-black.png"/></i></a></li>
+                                        <li><a href="https://en.wikipedia.org/wiki/Iain_Glen"><i><img src = "/wiki-white.png"/></i></a></li>
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
@@ -480,11 +470,6 @@ const homePage = () => {
                             <div className="single_team mx-3">
                                 <div className="team_image relative">
                                     <img src="/chang.jpg" alt="team" className="w-full"/>
-                                    <ul className="social absolute top-4 right-8">
-                                        <li><a href="#"><i className="lni lni-facebook-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-twitter-filled"></i></a></li>
-                                        <li><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
-                                    </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
                                     <h4 className="team_name text-xl md:text-2xl"><a href="#" className="text-black group-hover:text-white">Ruby Chang</a></h4>

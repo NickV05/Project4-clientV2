@@ -6,7 +6,7 @@ const NavbarComp = () => {
                     <div className="w-full">
                         <nav className="flex items-center justify-between navbar navbar-expand-lg">
                             <a className="navbar-brand py-3" href="index.html">
-                                <img src="/public/hosp.jpg" className =" w-1/3" />
+                                <img src="/hosp.jpg" className =" w-1/3" />
                             </a>
                             <button className="block navbar-toggler focus:outline-none lg:hidden" 
                             type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" 
