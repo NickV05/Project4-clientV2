@@ -1,27 +1,30 @@
 import '../LineIcons.css'
 import '../animate.css'
 import '../tiny-slider.css'
+import { useState, useEffect } from 'react'
+import { get } from '../services/authService'
 
 const homePage = () => {
 
+const [blog, setBlogs ] = useState(null)
+
+const getBlogs = () => {
+    get('/pageData/blogs')
+      .then((response) => {
+        console.log('Blogs', response.data );
+        
+      })
+      .catch((error) => {
+        console.log("Error", error)
+      });
+}
+
+useEffect(() => {
+getBlogs();
+},[])
+
   return (
     <div>
-    <div className="preloader">
-        <div className="loader">
-            <div className="ytp-spinner">
-                <div className="ytp-spinner-container">
-                    <div className="ytp-spinner-rotator">
-                        <div className="ytp-spinner-left">
-                            <div className="ytp-spinner-circle"></div>
-                        </div>
-                        <div className="ytp-spinner-right">
-                            <div className="ytp-spinner-circle"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <section className="header_area">
         
@@ -315,7 +318,7 @@ const homePage = () => {
                                     <img src="/dialysis.jpg" alt="work" className="w-full"/>
                                 </div>
                                 <div className="work_content">
-                                    <a href="https://www.mountsinai.org/about/newsroom/2023/the-mount-sinai-hospital-commemorates-seventy-fifth-anniversary-of-first-dialysis-procedure-with-continuing-medical-education-event" className="arrow"><i><img src = "/page.png"/></i></a>
+                                    <a target="_blank" href="https://www.mountsinai.org/about/newsroom/2023/the-mount-sinai-hospital-commemorates-seventy-fifth-anniversary-of-first-dialysis-procedure-with-continuing-medical-education-event" className="arrow"><i><img src = "/page.png"/></i></a>
                                     <h4 className="work_title text-xl md:text-2xl text-center"><a href="https://www.mountsinai.org/about/newsroom/2023/the-mount-sinai-hospital-commemorates-seventy-fifth-anniversary-of-first-dialysis-procedure-with-continuing-medical-education-event">Dialysis 75th Anniversary</a></h4>
                                 </div>
                             </div>
@@ -330,7 +333,7 @@ const homePage = () => {
                                     <img src="/covid.jpg" alt="work" className="w-full"/>
                                 </div>
                                 <div className="work_content">
-                                <a href="https://www.eurekalert.org/news-releases/980058" className="arrow"><i><img src = "/page.png"/></i></a>
+                                <a target="_blank" href="https://www.eurekalert.org/news-releases/980058" className="arrow"><i><img src = "/page.png"/></i></a>
                                     <h4 className="work_title text-xl md:text-2xl text-center"><a href="https://www.eurekalert.org/news-releases/980058">COVID-19 vaccination</a></h4>
                                 </div>
                             </div>
@@ -343,7 +346,7 @@ const homePage = () => {
                                     <img src="/sinai.jpg" alt="work" className="w-full"/>
                                 </div>
                                 <div className="work_content">
-                                <a href="https://www.mountsinai.org/about/newsroom/2023/mount-sinai-health-system-and-usta-expand-exclusive-partnership-through-twenty-twenty-six" className="arrow"><i><img src = "/page.png"/></i></a>
+                                <a target="_blank" href="https://www.mountsinai.org/about/newsroom/2023/mount-sinai-health-system-and-usta-expand-exclusive-partnership-through-twenty-twenty-six" className="arrow"><i><img src = "/page.png"/></i></a>
                                     <h4 className="work_title text-xl md:text-2xl text-center"><a href="https://www.mountsinai.org/about/newsroom/2023/mount-sinai-health-system-and-usta-expand-exclusive-partnership-through-twenty-twenty-six">Mt. Sinai Partnership</a></h4>
                                 </div>
                             </div>
@@ -356,7 +359,7 @@ const homePage = () => {
                                     <img src="/grand.png" alt="work" className="w-full"/>
                                 </div>
                                 <div className="work_content">
-                                <a href="https://expressapp.adaptable.app/forum/details/651473f3263b65a26bf6091d" className="arrow"><i><img src = "/page.png"/></i></a>
+                                <a target="_blank" href="https://expressapp.adaptable.app/forum/details/651473f3263b65a26bf6091d" className="arrow"><i><img src = "/page.png"/></i></a>
                                     <h4 className="work_title text-xl md:text-2xl text-center"><a href="https://expressapp.adaptable.app/forum/details/651473f3263b65a26bf6091d">Grand Opening</a></h4>
                                 </div>
                             </div>
@@ -386,9 +389,9 @@ const homePage = () => {
                                 <div className="team_image relative">
                                     <img src="/wong.gif" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
-                                        <li><a href="https://twitter.com/Ada_Wong_IG"><i><img src = "/twit-white.png"/></i></a></li>
-                                        <li><a href="https://www.facebook.com/AdaWongLover/"><i><img src = "/facebook-white.png"/></i></a></li>
-                                        <li><a href="https://en.wikipedia.org/wiki/Ada_Wong#:~:text=She%20survives%20an%20accidental%20T,virus%20and%20resumes%20her%20espionage."><i><img src = "/wiki-white.png"/></i></a></li>
+                                        <li><a href="https://twitter.com/Ada_Wong_IG" target="_blank"><i><img src = "/twit-white.png"/></i></a></li>
+                                        <li><a href="https://www.facebook.com/AdaWongLover/" target="_blank"><i><img src = "/facebook-white.png"/></i></a></li>
+                                        <li><a target="_blank" href="https://en.wikipedia.org/wiki/Ada_Wong#:~:text=She%20survives%20an%20accidental%20T,virus%20and%20resumes%20her%20espionage."><i><img src = "/wiki-white.png"/></i></a></li>
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
@@ -405,9 +408,9 @@ const homePage = () => {
                                 <div className="team_image relative">
                                     <img src="/evelyn.gif" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
-                                        <li><a href="https://twitter.com/paonunezmexico"><i><img src = "/twit-white.png"/></i></a></li>
-                                        <li><a href="https://www.facebook.com/paolanunezactriz/"><i><img src = "/facebook-white.png"/></i></a></li>
-                                        <li><a href="https://residentevil.fandom.com/wiki/Evelyn_Marcus"><i><img src = "/wiki-white.png"/></i></a></li>
+                                        <li><a target="_blank" href="https://twitter.com/paonunezmexico"><i><img src = "/twit-white.png"/></i></a></li>
+                                        <li><a target="_blank" href="https://www.facebook.com/paolanunezactriz/"><i><img src = "/facebook-white.png"/></i></a></li>
+                                        <li><a target="_blank" href="https://residentevil.fandom.com/wiki/Evelyn_Marcus"><i><img src = "/wiki-white.png"/></i></a></li>
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
@@ -452,9 +455,9 @@ const homePage = () => {
                                 <div className="team_image relative">
                                     <img src="/doctor.gif" alt="team" className="w-full"/>
                                     <ul className="social absolute top-4 right-8">
-                                        <li><a href="https://twitter.com/IainGlenFan"><i><img src = "/twit-white.png"/></i></a></li>
-                                        <li><a href="https://www.facebook.com/people/Iain-Glen/100063555917651/"><i><img src = "/facebook-black.png"/></i></a></li>
-                                        <li><a href="https://en.wikipedia.org/wiki/Iain_Glen"><i><img src = "/wiki-white.png"/></i></a></li>
+                                        <li><a target="_blank" href="https://twitter.com/IainGlenFan"><i><img src = "/twit-white.png"/></i></a></li>
+                                        <li><a target="_blank" href="https://www.facebook.com/people/Iain-Glen/100063555917651/"><i><img src = "/facebook-black.png"/></i></a></li>
+                                        <li><a target="_blank" href="https://en.wikipedia.org/wiki/Iain_Glen"><i><img src = "/wiki-white.png"/></i></a></li>
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
@@ -490,11 +493,12 @@ const homePage = () => {
                 <div className="w-full lg:w-1/2">
                     <div className="section_title text-center pb-6">
                         <h5 className="sub_title">Blog</h5>
-                        <h4 className="main_title">From The Blog</h4>
+                        <h4 className="main_title">From The Forum</h4>
                     </div> 
                 </div>
             </div> 
             <div className="row justify-center lg:justify-start">
+
                 <div className="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
                     <div className="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300 overflow-hidden hover:shadow-lg">
                         <div className="blog_image">
@@ -510,6 +514,7 @@ const homePage = () => {
                         </div>
                     </div> 
                 </div>
+
                 <div className="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
                     <div className="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300 overflow-hidden hover:shadow-lg">
                         <div className="blog_image">
@@ -525,6 +530,7 @@ const homePage = () => {
                         </div>
                     </div> 
                 </div>
+
                 <div className="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
                     <div className="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300 overflow-hidden hover:shadow-lg">
                         <div className="blog_image">
@@ -540,6 +546,8 @@ const homePage = () => {
                         </div>
                     </div> 
                 </div>
+
+                
             </div> 
         </div> 
     </section>
@@ -612,16 +620,6 @@ const homePage = () => {
         <div className="container">
             <div className="footer_widget pt-18 pb-120">
                 <div className="row justify-center">
-                    <div className="w-full md:w-1/2 lg:w-3/12">
-                        <div className="footer_about mt-13 mx-3">
-                            <div className="footer_logo">
-                                <a href="#"><img src="/logo-footer.svg" alt=""/></a>
-                            </div>
-                            <div className="footer_content mt-8">
-                                <p className="text-white">Lorem ipsum dolor sitco nsetetu nonumy eirmod tempor invidunt ut labore et dolore magna uyam erat, sed diam.</p>
-                            </div>
-                        </div>
-                    </div>
                     <div className="w-full md:w-1/2 lg:w-5/12">
                         <div className="footer_link_wrapper flex flex-wrap mx-3">
                             <div className="footer_link w-1/2 md:pl-13 mt-13">
@@ -665,13 +663,13 @@ const homePage = () => {
                     </ul>
                 </div> 
                 <div className="footer_copyright_content pt-4 text-center">
-                    <p className="text-white">Designed and Developed by <a href="https://uideck.com" rel="nofollow" className="text-white hover:text-theme-color">UIdeck</a> and <a href="https://tailwindtemplates.co" rel="nofollow" className="text-white hover:text-theme-color">Tailwind Templates</a></p>
+                    <p className="text-white">Designed and Developed by <a href="https://uideck.com" rel="nofollow" className="text-white hover:text-theme-color">Nikita Valovyy</a> </p>
                 </div> 
             </div> 
         </div> 
     </footer>
 
-    <a href="#" className="scroll-top"><i className="lni lni-chevron-up"></i></a>
+    <a href="#" className="scroll-top"><i><img src = "/arrow.png"/></i></a>
 
     </div>
     
