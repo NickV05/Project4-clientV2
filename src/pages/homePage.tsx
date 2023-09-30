@@ -1,6 +1,8 @@
 import '../LineIcons.css'
 import '../animate.css'
 import '../tiny-slider.css'
+import '../index.css'
+import '../tailwindcss.css'
 import { useState, useEffect } from 'react'
 import { get } from '../services/authService'
 
@@ -655,12 +657,6 @@ getBlogs();
             </div> 
             <div className="footer_copyright pt-3 pb-6 border-t-2 border-solid border-white border-opacity-10 sm:flex justify-between">
                 <div className="footer_social pt-4 mx-3 text-center">
-                    <ul className="social flex justify-center sm:justify-start">
-                        <li className="mr-3"><a href="https://facebook.com/uideckHQ"><i className="lni lni-facebook-filled"></i></a></li>
-                        <li className="mr-3"><a href="https://twitter.com/uideckHQ"><i className="lni lni-twitter-filled"></i></a></li>
-                        <li className="mr-3"><a href="https://instagram.com/uideckHQ"><i className="lni lni-instagram-original"></i></a></li>
-                        <li className="mr-3"><a href="#"><i className="lni lni-linkedin-original"></i></a></li>
-                    </ul>
                 </div> 
                 <div className="footer_copyright_content pt-4 text-center">
                     <p className="text-white">Designed and Developed by <a href="https://uideck.com" rel="nofollow" className="text-white hover:text-theme-color">Nikita Valovyy</a> </p>

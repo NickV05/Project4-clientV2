@@ -294,6 +294,10 @@ a, button {
   @apply delay-400;
 }
 
+.mb-10{
+  @apply margin-bottom:10
+}
+
 .pricing_menu .active {
   @apply bg-theme-color text-white;
 }
@@ -350,4 +354,6 @@ a, button {
 .footer_social li a {
   @apply w-8 h-8 rounded-full bg-white bg-opacity-10 text-white flex items-center justify-center hover:text-theme-color hover:bg-opacity-100;
 }
+
+
 }

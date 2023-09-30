@@ -1,6 +1,8 @@
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import NavbarComp from "./components/NavbarComp";
 import HomePage from "./pages/homePage";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
 
 
 function App() {
@@ -22,20 +24,20 @@ function App() {
       <NavbarComp />
  
       <Routes>     
-
         <Route path ="/" element={<HomePage/>}/>
 
-        {/* <Route element={<LoggedIn />}>
+
+        <Route element={<LoggedIn />}>
 
 
-        </Route> */}
+        </Route>
 
-        {/* <Route element={<NotLoggedIn />}>
+        <Route element={<NotLoggedIn />}>
           
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
 
-        </Route> */}
+        </Route>
 
 
       </Routes>
