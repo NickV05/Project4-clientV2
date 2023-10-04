@@ -48,7 +48,8 @@ const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBody((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-const formSubmit =() => {
+const formSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault(); 
     console.log("Sent to server ===>", body)
     post('/pageData/ask', body)
     .then(() => {
