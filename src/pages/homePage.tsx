@@ -4,21 +4,61 @@ import '../tiny-slider.css'
 import '../index.css'
 import '../tailwindcss.css'
 import { useState, useEffect } from 'react'
-import { get } from '../services/authService'
+import { get, post } from '../services/authService'
 
-const homePage = () => {
+interface Creator {
+    fullName: string;
+    _id: string;
+    photo: string;
+  }
+  
+  interface BlogPost {
+    creator: Creator;
+    topicName: string;
+    _id: string;
+    photo: string;
+  }
 
-const [blog, setBlogs ] = useState(null)
+  const homePage: React.FC = () => {
+
+    const [blog, setBlogs] = useState<BlogPost[] | null>(null);
+    const [body, setBody] = useState({
+        message: "",
+        email: "",
+        name: "",
+      });
 
 const getBlogs = () => {
     get('/pageData/blogs')
       .then((response) => {
         console.log('Blogs', response.data );
+        setBlogs(response.data)
         
       })
       .catch((error) => {
         console.log("Error", error)
       });
+}
+
+const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setBody((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setBody((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+const formSubmit =() => {
+    console.log("Sent to server ===>", body)
+    post('/pageData/ask', body)
+    .then(() => {
+        setBody({
+            message: "",
+            email: "",
+            name: "",
+          })
+    console.log("RESET BODY ===>", body)
+    })
 }
 
 useEffect(() => {
@@ -27,9 +67,7 @@ getBlogs();
 
   return (
     <div>
-
     <section className="header_area">
-        
 
         <div id="home" className="header_hero bg-gray relative z-10 overflow-hidden lg:flex items-center">
             <div className="hero_shape shape_1">
@@ -499,58 +537,27 @@ getBlogs();
                     </div> 
                 </div>
             </div> 
-            <div className="row justify-center lg:justify-start">
+           {blog ? <div className="row justify-center lg:justify-start">
 
-                <div className="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
+           {blog.map((post) => (
+            <div className="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
                     <div className="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300 overflow-hidden hover:shadow-lg">
                         <div className="blog_image">
-                            <img src="/blog-1.jpg" alt="blog" className="w-full"/>
+                            <img src={post.photo} alt="blog" className="h-280 w-full"/>
                         </div>
                         <div className="blog_content p-4 md:p-5">
                             <ul className="blog_meta flex justify-between">
-                                <li className="text-body-color text-sm md:text-base">By: <a href="#" className="text-body-color hover:text-theme-color">Musharof Chowdury</a></li>
-                                <li className="text-body-color text-sm md:text-base">15 June 2024</li>
+                                <li className="text-body-color text-sm md:text-base">By: <a target="_blank" href={`https://expressapp.adaptable.app/auth/userProfile/${post.creator._id}`} className="text-body-color hover:text-theme-color">{post.creator.fullName}</a></li>
+
                             </ul>
-                            <h3 className="blog_title"><a href="#">How to track your business revenue</a></h3>
-                            <a href="#" className="more_btn">Read More</a>
+                            <h3 className="blog_title"><a target="_blank" href={`https://expressapp.adaptable.app/forum/details/${post._id}`}>{post.topicName}</a></h3>
+                            <a target="_blank" href={`https://expressapp.adaptable.app/forum/details/${post._id}`}>Read More</a>
                         </div>
                     </div> 
                 </div>
+                ))}
+            </div> : <p>Loading</p>}
 
-                <div className="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
-                    <div className="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300 overflow-hidden hover:shadow-lg">
-                        <div className="blog_image">
-                            <img src="/blog-2.jpg" alt="blog" className="w-full"/>
-                        </div>
-                        <div className="blog_content p-4 md:p-5">
-                            <ul className="blog_meta flex justify-between">
-                                <li className="text-body-color text-sm md:text-base">By: <a href="#" className="text-body-color hover:text-theme-color">Musharof Chowdury</a></li>
-                                <li className="text-body-color text-sm md:text-base">15 June 2024</li>
-                            </ul>
-                            <h3 className="blog_title"><a href="#">Improving products depending on feedback</a></h3>
-                            <a href="#" className="more_btn">Read More</a>
-                        </div>
-                    </div> 
-                </div>
-
-                <div className="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
-                    <div className="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300 overflow-hidden hover:shadow-lg">
-                        <div className="blog_image">
-                            <img src="/blog-3.jpg" alt="blog" className="w-full"/>
-                        </div>
-                        <div className="blog_content p-4 md:p-5">
-                            <ul className="blog_meta flex justify-between">
-                                <li className="text-body-color text-sm md:text-base">By: <a href="#" className="text-body-color hover:text-theme-color">Musharof Chowdury</a></li>
-                                <li className="text-body-color text-sm md:text-base">15 June 2024</li>
-                            </ul>
-                            <h3 className="blog_title"><a href="#">How to diversify your audience</a></h3>
-                            <a href="#" className="more_btn">Read More</a>
-                        </div>
-                    </div> 
-                </div>
-
-                
-            </div> 
         </div> 
     </section>
 
@@ -572,26 +579,26 @@ getBlogs();
                         </div> 
                         
                         <div className="contact_form">
-                            <form id="contact-form" action="assets/php/contact.php" method="POST">
+                            <form id="contact-form"  onSubmit={formSubmit}>
                                 <div className="row">
                                     <div className="w-full md:w-1/2">
                                         <div className="mx-3">
                                             <div className="single_form mt-8">
-                                                <input name="name" id="name" type="text" placeholder="Name" className="w-full rounded-md py-4 px-6 border border-solid border-body-color"/>
+                                                <input name="name" id="name" type="text" placeholder="Name" onChange={handleTextChange} className="w-full rounded-md py-4 px-6 border border-solid border-body-color"/>
                                             </div> 
                                         </div>
                                     </div>
                                     <div className="w-full md:w-1/2">
                                         <div className="mx-3">
                                             <div className="single_form mt-8">
-                                                <input name="email" id="email" type="email" placeholder="Email" className="w-full rounded-md py-4 px-6 border border-solid border-body-color"/>
+                                                <input name="email" id="email" type="email" placeholder="Email" onChange={handleTextChange} className="w-full rounded-md py-4 px-6 border border-solid border-body-color"/>
                                             </div> 
                                         </div>
                                     </div>
                                     <div className="w-full">
                                         <div className="mx-3">
                                             <div className="single_form mt-8">
-                                                <textarea name="message" id="message" placeholder="Message" rows="5" className="w-full rounded-md py-4 px-6 border border-solid border-body-color resize-none"></textarea>
+                                                <textarea name="message" id="message" placeholder="Message" rows="5" onChange={handleAreaChange} className="w-full rounded-md py-4 px-6 border border-solid border-body-color resize-none"></textarea>
                                             </div> 
                                         </div>
                                     </div>

@@ -17,7 +17,6 @@ function SignupPage() {
   const navigate = useNavigate();
 
   if (!authContext) {
-    // Handle the case where AuthContext is undefined.
     return null; 
   }
 
