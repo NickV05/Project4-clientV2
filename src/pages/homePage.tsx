@@ -28,6 +28,10 @@ interface Creator {
         name: "",
       });
 
+    const [email, setEmail] = useState({
+        email:""
+    })
+
 const getBlogs = () => {
     get('/pageData/blogs')
       .then((response) => {
@@ -48,19 +52,38 @@ const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBody((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-const formSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault(); 
-    console.log("Sent to server ===>", body)
+  const formSubmit = () => {
+    console.log("Sent to server ===>", body);
+  
     post('/pageData/ask', body)
-    .then(() => {
+      .then(() => {
+        console.log("POST request successful");
         setBody({
-            message: "",
-            email: "",
-            name: "",
-          })
-    console.log("RESET BODY ===>", body)
+          message: "",
+          email: "",
+          name: "",
+        });
+        console.log("RESET BODY ===>", body); 
+      })
+      .catch((error) => {
+        console.error("POST request failed:", error);
+      });
+  };
+
+  const subscribe = () => {
+    post('/pageData/subscribe', { email: email.email })
+    .then(() => {
+        setEmail({
+            email:""
+        })
+        console.log("POST request successful");
     })
-}
+  }
+
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail({ email: e.target.value });
+  };
 
 useEffect(() => {
 getBlogs();
@@ -576,7 +599,7 @@ getBlogs();
                         <div className="section_title pb-4">
                             <h5 className="sub_title">Contact</h5>
                             <h4 className="main_title">Get In Touch</h4>
-                            <p>Lorem ipsum dolor sitrg amet, consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
+                            <p>Contact us for more information. We're here to help and answer any questions you may have.</p>
                         </div> 
                         
                         <div className="contact_form">
@@ -628,34 +651,15 @@ getBlogs();
             <img src="/footer-shape-right.png" alt=""/>
         </div>
         <div className="container">
-            <div className="footer_widget pt-18 pb-120">
+            <div className="footer_widget pb-120">
                 <div className="row justify-center">
-                    <div className="w-full md:w-1/2 lg:w-5/12">
-                        <div className="footer_link_wrapper flex flex-wrap mx-3">
-                            <div className="footer_link w-1/2 md:pl-13 mt-13">
-                                <h2 className="footer_title text-xl font-semibold text-white">Quick Links</h2>
-                                <ul className="link pt-4">
-                                    <li><a href="#" className="text-white mt-4 hover:text-theme-color">Company</a></li>
-                                    <li><a href="#" className="text-white mt-4 hover:text-theme-color">Privacy Policy</a></li>
-                                    <li><a href="#" className="text-white mt-4 hover:text-theme-color">About</a></li>
-                                </ul>
-                            </div> 
-                            <div className="footer_link w-1/2 md:pl-13 mt-13">
-                                <h2 className="footer_title text-xl font-semibold text-white">Resources</h2>
-                                <ul className="link pt-4">
-                                    <li><a href="#" className="text-white mt-4 hover:text-theme-color">Support</a></li>
-                                    <li><a href="#" className="text-white mt-4 hover:text-theme-color">Contact</a></li>
-                                    <li><a href="#" className="text-white mt-4 hover:text-theme-color">Terms</a></li>
-                                </ul>
-                            </div> 
-                        </div> 
-                    </div>
+                    
                     <div className="w-full md:w-2/3 lg:w-4/12">
                         <div className="footer_subscribe mt-13 mx-3">
-                            <h2 className="footer_title text-xl font-semibold text-white">Newsletter</h2>
+                            <h2 className="footer_title text-xl font-semibold text-white text-center">Newsletter</h2>
                             <div className="subscribe_form text-right mt-9 relative">
-                                <form action="#">
-                                    <input type="text" placeholder="Enter email" className="w-full py-5 px-6 bg-white text-black rounded-full border-none"/>
+                                <form onSubmit={subscribe}>
+                                    <input onChange={handleEmailChange} type="text" placeholder="Enter email" className="w-full py-5 px-6 bg-white text-black rounded-full border-none"/>
                                     <button className="main-btn subscribe-btn">Subscribe</button>
                                 </form>
                             </div>
