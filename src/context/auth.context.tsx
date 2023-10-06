@@ -39,7 +39,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     const storedToken = localStorage.getItem("authToken");
 
     if (storedToken) {
-      get("/auth/verify")
+      get("/users/verify")
         .then((response: AxiosResponse<User>) => {
           const userData = response.data;
           setIsLoggedIn(true);

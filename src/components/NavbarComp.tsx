@@ -1,4 +1,15 @@
+import { useContext } from "react";
+import { AuthContext} from "../context/auth.context";
+
+
 const NavbarComp = () => {
+const authContext = useContext(AuthContext);
+    if (!authContext) {
+      return null;
+    }
+const { logOutUser } = authContext;
+
+
   return (
     <div className="navbar-area bg-white  ">
             <div className="container relative">
@@ -40,6 +51,9 @@ const NavbarComp = () => {
                                     </li>
                                     <li className="nav-item ml-5 lg:ml-11">
                                         <a className="page-scroll" href="#contact">Contact</a>
+                                    </li>
+                                    <li className="nav-item ml-5 lg:ml-11">
+                                        <button className="page-scroll"  onClick={logOutUser}><a>Log out</a></button>
                                     </li>
                                 </ul>
                             </div> 

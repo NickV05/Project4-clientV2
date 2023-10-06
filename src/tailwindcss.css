@@ -633,6 +633,10 @@ video {
   display: flex;
 }
 
+.flex-col{
+  flex-direction: column;
+}
+
 .table{
   display: table;
 }
@@ -685,8 +689,17 @@ video {
   height: 100%;
 }
 
+
 .h-280{
   height: 280px;
+}
+
+.h-700{
+  height: 700px;
+}
+
+.h-80{
+  height: 80px;
 }
 
 .text-sm{
@@ -1200,6 +1213,7 @@ a, button {
   --tw-text-opacity: 1;
   color: rgba(249, 79, 79, var(--tw-text-opacity));
 }
+
 
 .btn-hover::after {
   border-radius: 9999px;

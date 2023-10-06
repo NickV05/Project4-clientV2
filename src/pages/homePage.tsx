@@ -135,9 +135,9 @@ getBlogs();
                             <h2 className="hero_title text-2xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 
                             font-extrabold">Our Business is <span className="text-theme-color">Life</span> itself</h2>
                             <p className="mt-8 lg:mr-8">Park West Medicare Center is consistently ranked as one of the top hospitals in the nation by U.S. News & World report </p>
-                            <div className="hero_btn mt-10">
+                            {/* <div className="hero_btn mt-10">
                                 <a className="main-btn" href="#0">Get Started</a>
-                            </div>
+                            </div> */}
                         </div> 
                     </div>
                 </div> 

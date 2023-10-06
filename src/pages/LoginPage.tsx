@@ -26,7 +26,7 @@ function LoginPage() {
     const requestBody = { email, password };
 
     if (authContext) {
-      post('/auth/login', requestBody)
+      post('/users/login', requestBody)
         .then((response) => {
           console.log('JWT token', response.data.authToken);
           authContext.storeToken(response.data.authToken);
@@ -41,73 +41,71 @@ function LoginPage() {
   };
 
   return (
-<section>
-<div>
-  <div className="g-6 flex h-80 items-center justify-center lg:justify-between">
-    <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
-      <img
-       src="/umbrella.gif"
-        className="w-full"
-        alt="Phone image"
-      />
-    </div>
+<section className="h-700">
+      <div className="container h-700 px-6 py-24">
+        <div className="g-6 flex h-700 flex-wrap items-center justify-center lg:justify-between">
+          <div className="mb-12 md:mb-0 w-1/2 ">
+            <img
+              src="/umbrella.gif"
+              className="w-full"
+              alt="Phone image"
+            />
+          </div>
 
-    <div>
-      <form
-        onSubmit={handleLoginSubmit}
-        className="flex flex-col justify-center align-middle"
-      >
+          <div className="md:w-4/12 lg:ml-6 lg:w-4/12">
+            <form
+              onSubmit={handleLoginSubmit}
+              className="flex flex-col justify-center align-middle navbar-nav"
+            >
+              <div
+                className="relative pb-6 flex justify-center align-middle"
 
-        <div className="relative mb-6 flex flex-col justify-center align-middle">
+              >
                 <input
                   type="email"
                   name="email"
                   onChange={handleEmail}
-                  className="peer flex min-h-[auto] lg:w-1/2 sm:w-5/6 justify-center align-middle rounded border-0 bg-transparent px-3 py-[0.32rem]
-                   leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 
-                   data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 
-                   dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 "
-                   placeholder="Email address"
+                  className="peer flex text-center min-h-[auto] justify-center align-middle"
+                  
+                  placeholder="Email address"
                 />
               </div>
 
-        <div className="relative mb-6 flex flex-col justify-center align-middle">
-          <input
-            type="password"
-            name="password"
-            className="peer block min-h-[auto] lg:w-1/2 sm:w-5/6 rounded justify-center align-middle border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] 
-            outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 
-            motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 
-            [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-            id="exampleFormControlInput33"
-            placeholder="Password"
-            onChange={handlePassword}
-          />
-        </div>
+              <div className="relative pb-6 flex justify-center align-middle">
+                <input
+                  type="password"
+                  name="password"
+                  onChange={handlePassword}
+                  className="peer flex text-center min-h-[auto] justify-center align-middle "
+                  
+                   placeholder="Password"
+                />
+              </div>
+             
+              <button
+                type="submit"
+                className=" text-center pb-6 nav-item"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                <a>Sign in</a>
+              </button>
+              
 
-        <button
-          type="submit"
-          data-te-ripple-init
-          data-te-ripple-color="light"
-        >
-          Sign in
-        </button>
-
-        <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 
-        after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-          <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
-            {errorMessage && (
-              <p className="error-message">{errorMessage}</p>
-            )}
-            Don't have an account yet?
-                  <Link to="/signup"> Sign Up</Link>
-          </p>
+              <div className="my-4 flex justify-center text-center ">
+                <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200 nav-item">
+                  {errorMessage && (
+                    <p className="error-message">{errorMessage}</p>
+                  )}
+                  Don't have an account yet?
+                  <Link to="/signup" className ="ml-5 "> Sign Up</Link>
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
-      </form>
-    </div>
-  </div>
-</div>
-</section>
+      </div>
+    </section>
   );
 }
 
