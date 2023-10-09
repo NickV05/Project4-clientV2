@@ -4,7 +4,6 @@ import HomePage from "./pages/homePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 
-
 function App() {
 
   const getToken = () => {
@@ -24,11 +23,10 @@ function App() {
       <NavbarComp />
  
       <Routes>     
-        <Route path ="/" element={<HomePage/>}/>
-
 
         <Route element={<LoggedIn />}>
 
+        <Route path ="/" element={<HomePage/>}/>
 
         </Route>
 
