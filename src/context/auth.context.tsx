@@ -8,7 +8,7 @@ interface AuthContextType {
   isLoggedIn: boolean;
   isLoading: boolean;
   user: User | null;
-  storeToken: (token: string) => void;
+  storeToken: (token: any) => void;
   authenticateUser: () => void;
   logOutUser: () => void;
   setUser: (user: User | null) => void;
@@ -27,7 +27,7 @@ function AuthProvider({ children }: AuthProviderProps) {
 
   const navigate = useNavigate();
 
-  const storeToken = (token: string) => {
+  const storeToken = (token: any) => {
     localStorage.setItem("authToken", token);
   };
 
