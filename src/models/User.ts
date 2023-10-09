@@ -9,6 +9,6 @@ export interface User {
     location:string,
     username:string,
     image:string,
-    createdAt:string,
-    updatedAt:string
+    createdAt:any,
+    updatedAt:any
 }

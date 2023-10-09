@@ -10,14 +10,14 @@ import mongoose from 'mongoose';
 interface Creator {
     fullName: string ;
     _id: mongoose.Types.ObjectId;
-    photo: any ;
+    photo: string ;
   }
   
   interface BlogPost {
     creator: Creator;
     topicName: string ;
     _id: mongoose.Types.ObjectId;
-    photo: any ;
+    photo: string ;
   }
 
   const homePage: React.FC = () => {
