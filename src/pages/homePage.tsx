@@ -5,17 +5,18 @@ import '../index.css'
 import '../tailwindcss.css'
 import { useState, useEffect } from 'react'
 import { get, post } from '../services/authService'
+import mongoose from 'mongoose';
 
 interface Creator {
     fullName: string;
-    _id: string;
+    _id: mongoose.Types.ObjectId;
     photo: string;
   }
   
   interface BlogPost {
     creator: Creator;
     topicName: string;
-    _id: string;
+    _id: mongoose.Types.ObjectId;
     photo: string;
   }
 
