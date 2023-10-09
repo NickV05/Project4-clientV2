@@ -221,7 +221,7 @@ getBlogs();
                 <div className="w-full lg:w-1/2">
                     <div className="about_content mx-4 pt-11 lg:pt-15 lg:pb-15">
                         <div className="section_title pb-9">
-                            <h5 className="sub_title">Why Choose Us</h5>
+                            <h5 className="sub_title">Why Choose Us?</h5>
                             <h4 className="main_title">Our Mission Your Satisfaction</h4>
                         </div> 
                         <p>At Park West Medicare Center, we understand that choosing a healthcare provider is a crucial decision that can greatly impact you and your loved ones' well-being.
