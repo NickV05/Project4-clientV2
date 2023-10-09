@@ -8,16 +8,16 @@ import { get, post } from '../services/authService'
 import mongoose from 'mongoose';
 
 interface Creator {
-    fullName: string | number;
+    fullName: string ;
     _id: mongoose.Types.ObjectId;
-    photo: string ;
+    photo: any ;
   }
   
   interface BlogPost {
     creator: Creator;
-    topicName: string | number;
+    topicName: string ;
     _id: mongoose.Types.ObjectId;
-    photo: string ;
+    photo: any ;
   }
 
   const homePage: React.FC = () => {
