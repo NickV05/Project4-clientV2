@@ -7,16 +7,16 @@ import { useState, useEffect } from 'react'
 import { get, post } from '../services/authService'
 
 interface Creator {
-    fullName: any ;
-    _id: any;
-    photo: any ;
+    fullName: string ;
+    _id: string;
+    photo: string ;
   }
   
   interface BlogPost {
     creator: Creator;
-    topicName: any ;
-    _id: any;
-    photo: any ;
+    topicName: string ;
+    _id: string;
+    photo: string ;
   }
 
   const homePage: React.FC = () => {
@@ -28,7 +28,7 @@ interface Creator {
         name: null,
       });
 
-      const [email, setEmail] = useState<{ email: string | any }>({ email: null });
+      const [email, setEmail] = useState<{ email: string | null }>({ email: null });
 
 const getBlogs = () => {
     get('/pageData/blogs')

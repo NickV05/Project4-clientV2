@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const get = (route:any) => {
+export const get = (route:string) => {
     let token = localStorage.getItem('authToken')
 
     return axios.get(import.meta.env.VITE_SERVER_URL + route, {
@@ -8,7 +8,7 @@ export const get = (route:any) => {
     })
 }
 
-export const post = (route:any, body:any) => {
+export const post = (route:string, body:any) => {
     let token = localStorage.getItem('authToken')
 
     return axios.post(import.meta.env.VITE_SERVER_URL + route, body, {
@@ -16,7 +16,7 @@ export const post = (route:any, body:any) => {
     })
 }
 
-export const put = (route:any, body:any) => {
+export const put = (route:string, body:any) => {
     let token = localStorage.getItem('authToken')
 
     return axios.put(import.meta.env.VITE_SERVER_URL + route, body, {
@@ -24,7 +24,7 @@ export const put = (route:any, body:any) => {
     })
 }
 
-export const axiosDelete = (route:any) => {
+export const axiosDelete = (route:string) => {
     let token = localStorage.getItem('authToken')
 
     return axios.delete(import.meta.env.VITE_SERVER_URL + route, {

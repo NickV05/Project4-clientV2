@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 export interface User {
     _id:mongoose.Types.ObjectId,
     email:string,
-    password:any,
+    password:string,
     fullName:string,
     location:string,
     username:string,
