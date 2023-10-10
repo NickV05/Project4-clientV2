@@ -25,11 +25,11 @@ function App() {
  
       <Routes>     
 
-        {/* <Route element={<LoggedIn />}> */}
+        <Route element={<LoggedIn />}>
 
         <Route path ="/" element={<HomePage/>}/>
 
-        {/* </Route> */}
+        </Route>
 
         <Route element={<NotLoggedIn />}>
           
