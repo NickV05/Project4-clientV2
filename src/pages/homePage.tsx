@@ -32,7 +32,7 @@ interface Creator {
 
 const getBlogs = () => {
     get('/pageData/blogs')
-      .then((response:any) => {
+      .then((response) => {
         console.log('Blogs', response.data );
         setBlogs(response.data)
         
