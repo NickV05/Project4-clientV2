@@ -5,18 +5,17 @@ import '../index.css'
 import '../tailwindcss.css'
 import { useState, useEffect } from 'react'
 import { get, post } from '../services/authService'
-import mongoose from 'mongoose';
 
 interface Creator {
     fullName: string ;
-    _id: mongoose.Types.ObjectId;
+    _id: string;
     photo: string ;
   }
   
   interface BlogPost {
     creator: Creator;
     topicName: string ;
-    _id: mongoose.Types.ObjectId;
+    _id: string;
     photo: string ;
   }
 
@@ -24,14 +23,12 @@ interface Creator {
 
     const [blog, setBlogs] = useState<BlogPost[] | null>(null);
     const [body, setBody] = useState({
-        message: "",
-        email: "",
-        name: "",
+        message: null,
+        email: null,
+        name: null,
       });
 
-    const [email, setEmail] = useState({
-        email:""
-    })
+      const [email, setEmail] = useState<{ email: string | null }>({ email: null });
 
 const getBlogs = () => {
     get('/pageData/blogs')
@@ -60,9 +57,9 @@ const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       .then(() => {
         console.log("POST request successful");
         setBody({
-          message: "",
-          email: "",
-          name: "",
+          message: null,
+          email: null,
+          name: null,
         });
         console.log("RESET BODY ===>", body); 
       })
@@ -75,7 +72,7 @@ const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     post('/pageData/subscribe', { email: email.email })
     .then(() => {
         setEmail({
-            email:""
+            email:null
         })
         console.log("POST request successful");
     })
