@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import { AuthContext} from "../context/auth.context";
+import { useState, useContext } from "react";
 
 const NavbarComp = () => {
 const authContext = useContext(AuthContext);
@@ -7,6 +7,12 @@ const authContext = useContext(AuthContext);
       return null;
     }
 const { logOutUser, isLoggedIn } = authContext;
+const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+
+  };
 
 
   return (
@@ -18,13 +24,54 @@ const { logOutUser, isLoggedIn } = authContext;
                             <a className="navbar-brand py-3" href="/">
                                 <img src="/hosp.jpg" className =" w-1/3" />
                             </a>
-                            { isLoggedIn && <button className="block navbar-toggler focus:outline-none lg:hidden" 
+                            { isLoggedIn && <button onClick={toggleMenu} className="block navbar-toggler focus:outline-none lg:hidden" 
                             type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" 
                             aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="toggler-icon"></span>
                                 <span className="toggler-icon"></span>
                                 <span className="toggler-icon"></span>
                             </button>}
+
+
+
+
+
+                            {isMenuOpen && (
+          <div className="absolute left-0 z-20 flex justify-center w-full px-5 py-3 duration-300 
+          bg-white collapse navbar-collapse top-full mt-full 
+           shadow " id="navbarOne">
+              <ul id="nav" className="items-center content-start mr-auto lg:justify-end navbar-nav flex flex-wrap">
+                  <li className="nav-item ml-5 lg:ml-11">
+                      <a className="page-scroll active" href="#home">Home</a>
+                  </li>
+                  <li className="nav-item ml-5 lg:ml-11">
+                      <a className="page-scroll" href="#about">About</a>
+                  </li>
+                  <li className="nav-item ml-5 lg:ml-11">
+                      <a className="page-scroll" href="#services">Services</a>
+                  </li>
+                  <li className="nav-item ml-5 lg:ml-11">
+                      <a className="page-scroll" href="#work">News</a>
+                  </li>
+                  <li className="nav-item ml-5 lg:ml-11">
+                      <a className="page-scroll" href="#team">Team</a>
+                  </li>
+                  <li className="nav-item ml-5 lg:ml-11">
+                      <a className="page-scroll" href="#blog">Blog</a>
+                  </li>
+                  <li className="nav-item ml-5 lg:ml-11">
+                      <a className="page-scroll" href="#contact">Contact</a>
+                  </li>
+                   <li className="nav-item ml-5 lg:ml-11">
+                      <button className="page-scroll"  onClick={() => {
+                                logOutUser();
+                                toggleMenu();
+                              }}><a>Log out</a></button>
+                  </li>
+              </ul>
+          </div>
+        )}
+
 
                             { isLoggedIn &&<div className="absolute left-0 z-20 hidden w-full px-5 py-3 duration-300 
                             bg-white lg:w-auto collapse navbar-collapse lg:block top-full mt-full lg:static 

@@ -584,7 +584,7 @@ getBlogs();
     </section>
 
     <section id="contact" className="contact_area relative pt-18 pb-120">
-        <div className="contact_image flex items-center justify-end">
+        <div className="contact_image lg:flex md:flex items-center justify-end hidden">
             <div className="image lg:pr-13">
                 <img src="/contact.svg" alt="about"/>
             </div>
@@ -656,9 +656,9 @@ getBlogs();
                         <div className="footer_subscribe mt-13 mx-3">
                             <h2 className="footer_title text-xl font-semibold text-white text-center">Newsletter</h2>
                             <div className="subscribe_form text-right mt-9 relative">
-                                <form onSubmit={subscribe}>
+                                <form onSubmit={subscribe} className = "flex flex-col">
                                     <input onChange={handleEmailChange} type="text" placeholder="Enter email" className="w-full py-5 px-6 bg-white text-black rounded-full border-none"/>
-                                    <button className="main-btn subscribe-btn">Subscribe</button>
+                                    <button className="main-btn subscribe-btn ">Subscribe</button>
                                 </form>
                             </div>
                         </div> 
