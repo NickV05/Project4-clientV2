@@ -620,7 +620,7 @@ getBlogs();
                                     <div className="w-full">
                                         <div className="mx-3">
                                             <div className="single_form mt-8">
-                                                <textarea name="message" id="message" placeholder="Message" rows="5" onChange={handleAreaChange} className="w-full rounded-md py-4 px-6 border border-solid border-body-color resize-none"></textarea>
+                                                <textarea name="message" id="message" placeholder="Message" onChange={handleAreaChange} className="w-full rounded-md py-4 px-6 border border-solid border-body-color resize-none"></textarea>
                                             </div> 
                                         </div>
                                     </div>
