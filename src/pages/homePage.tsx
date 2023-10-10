@@ -7,16 +7,16 @@ import { useState, useEffect } from 'react'
 import { get, post } from '../services/authService'
 
 interface Creator {
-    fullName: string ;
-    _id: string;
-    photo: string ;
+    fullName: any ;
+    _id: any;
+    photo: any ;
   }
   
   interface BlogPost {
     creator: Creator;
-    topicName: string ;
-    _id: string;
-    photo: string ;
+    topicName: any ;
+    _id: any;
+    photo: any ;
   }
 
   const homePage: React.FC = () => {
@@ -28,11 +28,11 @@ interface Creator {
         name: null,
       });
 
-      const [email, setEmail] = useState<{ email: string | null }>({ email: null });
+      const [email, setEmail] = useState<{ email: string | any }>({ email: null });
 
 const getBlogs = () => {
     get('/pageData/blogs')
-      .then((response) => {
+      .then((response:any) => {
         console.log('Blogs', response.data );
         setBlogs(response.data)
         
@@ -41,7 +41,7 @@ const getBlogs = () => {
         console.log("Error", error)
       });
 }
-
+        
 const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBody((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
