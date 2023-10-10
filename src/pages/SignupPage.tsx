@@ -47,7 +47,7 @@ function SignupPage() {
 <section className="h-700">
 <div className="container h-700 px-6 py-24">
   <div className="g-6 flex h-700 flex-wrap items-center justify-center lg:justify-between">
-    <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
+    <div className="mb-12 mt-10 md:mb-0 ">
       <img
         src="/signup.gif"
         className="w-full"

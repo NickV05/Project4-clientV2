@@ -44,7 +44,7 @@ function LoginPage() {
 <section className="h-700">
       <div className="container h-700 px-6 py-24">
         <div className="g-6 flex h-700 flex-wrap items-center justify-center lg:justify-between">
-          <div className="mb-12 md:mb-0 w-1/2 ">
+          <div className="mb-12 mt-10  ">
             <img
               src="/umbrella.gif"
               className="w-full"
@@ -52,7 +52,7 @@ function LoginPage() {
             />
           </div>
 
-          <div className="md:w-4/12 lg:ml-6 lg:w-4/12">
+          <div className="md:w-4/12 lg:ml-6 lg:w-4/12 lg:mt-12">
             <form
               onSubmit={handleLoginSubmit}
               className="flex flex-col justify-center align-middle navbar-nav"
