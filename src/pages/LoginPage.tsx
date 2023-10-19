@@ -18,6 +18,9 @@ function LoginPage() {
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
+  if (!authContext) {
+    return null; 
+  }
 
   const handleEmail = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
   const handlePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
@@ -41,6 +44,9 @@ function LoginPage() {
   };
 
   return (
+
+(authContext.isLoading ? <img src="/spinner.gif" alt="loading" /> :
+
 <section className="h-700">
       <div className="container h-700 px-6 py-24">
         <div className="g-6 flex h-700 flex-wrap items-center justify-center lg:justify-between">
@@ -105,7 +111,7 @@ function LoginPage() {
           </div>
         </div>
       </div>
-    </section>
+    </section>)
   );
 }
 
