@@ -15,7 +15,7 @@ function LoginPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ function LoginPage() {
 
   return (
 
-(loading ? <img src="/spinner.gif" alt="loading" /> :
+(loading ? <section className ="h-700 flex items-center justify-center"> <img src="/spinner.gif" alt="loading" /></section>  :
 
 <section className="h-700">
       <div className="container h-700 px-6 py-24">
