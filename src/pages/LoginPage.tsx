@@ -15,6 +15,7 @@ function LoginPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ function LoginPage() {
     const requestBody = { email, password };
 
     if (authContext) {
+      setLoading(true);
       post('/users/login', requestBody)
         .then((response) => {
           console.log('JWT token', response.data.authToken);
@@ -45,7 +47,7 @@ function LoginPage() {
 
   return (
 
-(authContext.isLoading ? <img src="/spinner.gif" alt="loading" /> :
+(loading ? <img src="/spinner.gif" alt="loading" /> :
 
 <section className="h-700">
       <div className="container h-700 px-6 py-24">
