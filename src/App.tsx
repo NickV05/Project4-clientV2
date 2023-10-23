@@ -3,6 +3,7 @@ import NavbarComp from "./components/NavbarComp";
 import HomePage from "./pages/homePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import BookingPage from "./pages/bookingPage";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
 
         <Route element={<LoggedIn />}>
 
+        <Route path ="/booking" element={<BookingPage/>}/>
         <Route path ="/" element={<HomePage/>}/>
 
         </Route>

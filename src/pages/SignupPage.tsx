@@ -13,6 +13,7 @@ function SignupPage() {
   });
 
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const [loading, setLoading] = useState(false);
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -28,6 +29,7 @@ function SignupPage() {
 
   const handleSignupSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault(); 
+    setLoading(true);
 
     post('/users/signup', user)
       .then((response) => {
@@ -44,6 +46,8 @@ function SignupPage() {
   };
 
   return (
+    (loading ? <section className ="h-700 flex items-center justify-center"> <img src="/spinner.gif" alt="loading" /></section>  :
+
 <section className="h-700">
 <div className="container h-700 px-6 py-24">
   <div className="g-6 flex h-700 flex-wrap items-center justify-center lg:justify-between">
@@ -139,7 +143,7 @@ function SignupPage() {
     </div>
   </div>
 </div>
-</section>
+</section>)
   )
 }
 
