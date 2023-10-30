@@ -28,7 +28,7 @@ function App() {
 
         <Route element={<LoggedIn />}>
 
-        <Route path ="/booking" element={<BookingPage/>}/>
+        <Route path ="/booking/:doctorName" element={<BookingPage/>}/>
         <Route path ="/" element={<HomePage/>}/>
 
         </Route>

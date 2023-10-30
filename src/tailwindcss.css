@@ -531,6 +531,10 @@ a {
   width: 14rem;
 }
 
+.w-30{
+  width:30px
+}
+
 /* .pointer-events-none */
 .pointer-events-none {
   pointer-events: none;
@@ -652,6 +656,14 @@ a {
 /* .bg-emerald-100 */
 .bg-emerald-100 {
   background-color: #d1fae5;
+}
+
+.bg-red {
+  background-color:red
+}
+
+.bg-green {
+  background-color:green
 }
 
 /* .px-4 */
@@ -1104,6 +1116,7 @@ video {
   align-items: center;
 }
 
+
 .content-start{
   align-content: flex-start;
 }
@@ -1118,6 +1131,10 @@ video {
 
 .justify-between{
   justify-content: space-between;
+}
+
+.justify-around{
+  justify-content: space-around;
 }
 
 .font-semibold{
@@ -1451,6 +1468,14 @@ video {
 
 .w-1\/3{
   width: 33.333333%;
+}
+
+.w-1\/5{
+  width: 20%;
+}
+
+.w-1\/10{
+  width: 10%;
 }
 
 .w-full{
@@ -1845,6 +1870,28 @@ a, button {
 .navbar-nav .nav-item a:hover{
   --tw-text-opacity: 1;
   color: rgba(249, 79, 79, var(--tw-text-opacity));
+}
+
+.red-item{
+  display: inline-block;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  position: relative;
+  --tw-text-opacity: 1;
+  color: rgba(116, 126, 136, var(--tw-text-opacity));
+}
+
+.red-item:hover{
+  --tw-text-opacity: 1;
+  color: rgba(249, 79, 79, var(--tw-text-opacity));
+}
+
+.red-item-clicked{
+  color:white;
+  background-color: rgba(116, 126, 136, var(--tw-text-opacity));
 }
 
 .navbar-nav .nav-item a{

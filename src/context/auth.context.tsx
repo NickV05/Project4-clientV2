@@ -45,6 +45,7 @@ function AuthProvider({ children }: AuthProviderProps) {
           setIsLoggedIn(true);
           setIsLoading(false);
           setUser(userData);
+          console.log("USER ===>", userData)
         })
         .catch((error) => {
           console.error(error);

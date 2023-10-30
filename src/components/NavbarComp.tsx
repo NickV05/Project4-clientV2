@@ -42,7 +42,7 @@ const toggleMenu = () => {
            shadow " id="navbarOne">
               <ul id="nav" className="items-center content-start mr-auto lg:justify-end navbar-nav flex flex-wrap">
                   <li className="nav-item ml-5 lg:ml-11">
-                      <a className="page-scroll active" href="#home">Home</a>
+                      <a className="page-scroll active" href="/">Home</a>
                   </li>
                   <li className="nav-item ml-5 lg:ml-11">
                       <a className="page-scroll" href="#about">About</a>
@@ -78,7 +78,7 @@ const toggleMenu = () => {
                             lg:bg-transparent shadow lg:shadow-none" id="navbarOne">
                                 <ul id="nav" className="items-center content-start mr-auto lg:justify-end navbar-nav lg:flex">
                                     <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll active" href="#home">Home</a>
+                                        <a className="page-scroll active" href="/">Home</a>
                                     </li>
                                     <li className="nav-item ml-5 lg:ml-11">
                                         <a className="page-scroll" href="#about">About</a>
