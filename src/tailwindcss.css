@@ -595,6 +595,10 @@ a {
   width: 14rem;
 }
 
+.w-60 {
+  width: 23.45rem;
+}
+
 
 
 /* .datepicker-input */
@@ -710,6 +714,7 @@ a {
   font-size: 1.2rem;
   margin-top: 10px;
 }
+
 
 .loading-message {
   margin-top: 14px;

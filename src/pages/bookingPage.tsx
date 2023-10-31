@@ -17,7 +17,9 @@ const bookingPage = () => {
   const [buttonClass1, setButtonClass1] = useState('red-item');
   const [buttonClass2, setButtonClass2] = useState('red-item');
   const [buttonClass3, setButtonClass3] = useState('red-item');
-  const blocked = !(buttonDisabled1 === false && buttonDisabled2 === false);
+  const isoDate = date.toISOString();
+  const today = new Date();
+  const blocked = !(buttonDisabled1 === false && buttonDisabled2 === false && isoDate > today.toISOString());
   const authContext = useContext(AuthContext);
     if (!authContext) {
       return null;
@@ -77,60 +79,58 @@ const { user } = authContext;
 
   return (
     <>
-      {requestDone ? (
-  <>
-    {!confirm ? (<div className="mt-14 flex flex-col ">
-      <ul className="flex flex-col navbar-nav">
-        {hours.map((time) => {
-          return (
-            <li className="nav-item text-center" key={time}>
-              <button onClick={() => handleTime(time)}>
-                <a className="page-scroll ">{time}</a>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-      <button className="red-item" onClick = {() =>{setRequest(false)}}>Go back</button>
-      </div>
-    ) : (
-      <>{!message ?(<div className="mt-14 flex flex-col">
-      <h3 className="text-center">Time: {selectedHour} </h3>
-      <h3 className="text-center">Doctor: {doctorName ? doctorName.replace(/\b\w/g, match => match.toUpperCase()).replace(/-/g, ' ') : ''} </h3>
-      <h3 className="text-center">Service: {service} </h3>
-      <button className="red-item" onClick={() => {confirmTime();}}>Confirm Appointment</button>
-      <button className="red-item" onClick = {() =>{setConfirm(false)}}>Go back</button>
-    </div>): 
-    (<div className ="mt-14 flex flex-col">
-      <h1 className="text-center">{message}</h1>
-      <button><a className="red-item" href="/">Go back</a></button>
-
-    </div>)
-    }
-      </>
-    )}
-  </>
-) : (
-        <div className="mt-14 flex flex-col justify-center ">
-          <h1 className ="text-center">Appointment Booking</h1>
-            <h3 className ="text-center">Choose service</h3>
-          <div className ="flex flex-col">
-            <button className={buttonClass1} onClick={() => {setService("Check-up"); setButtonDisabled1(false); handleColor("button1")}}>Check-up</button>
-            <button className={buttonClass2} onClick={() => {setService("Medical Consultation");setButtonDisabled1(false);handleColor("button2")}}>Medical Consultation</button>
-            <button className={buttonClass3} onClick={() => {setService("Pre-op evaluation");setButtonDisabled1(false);handleColor("button3")}}>Pre-op evaluation</button>
-          </div>
-          <form
-            onSubmit={handleDateSubmit}
-            className ="flex flex-col items-center"
-          >
-            <label className ="text-center" htmlFor="dateofbirth"><h3>Choose the date</h3></label>
-            <input  onChange={handleDate} type="date" name="dateofbirth" id="dateofbirth" />
-            <button className="red-item" disabled={blocked}>Check this date</button>
-          </form>
-          <button ><a className="red-item" href="/">Go back</a></button>
+  {requestDone ? (
+    <>
+      {!confirm ? (
+        <div className="mt-14 flex flex-col">
+          <ul className="flex flex-col navbar-nav">
+            {hours.map((time) => (
+              <li className="nav-item text-center" key={time}>
+                <button onClick={() => handleTime(time)}>
+                  <a className="page-scroll">{time}</a>
+                </button>
+              </li>
+            ))}
+          </ul>
+          <button className="red-item" onClick={() => setRequest(false)}>Go back</button>
         </div>
+      ) : (
+        <>
+          {!message ? (
+            <div className="mt-14 flex flex-col">
+              <h3 className="text-center">Time: {selectedHour}</h3>
+              <h3 className="text-center">Doctor: {doctorName ? doctorName.replace(/\b\w/g, match => match.toUpperCase()).replace(/-/g, ' ') : ''}</h3>
+              <h3 className="text-center">Service: {service}</h3>
+              <button className="red-item" onClick={confirmTime}>Confirm Appointment</button>
+              <button className="red-item" onClick={() => setConfirm(false)}>Go back</button>
+            </div>
+          ) : (
+            <div className="mt-14 flex flex-col">
+              <h1 className="text-center">{message}</h1>
+              <button><a className="red-item" href="/">Go back</a></button>
+            </div>
+          )}
+        </>
       )}
     </>
+  ) : (
+    <div className="mt-14 flex flex-col justify-center">
+      <h1 className="text-center">Appointment Booking</h1>
+      <h3 className="text-center">Choose service</h3>
+      <div className="flex flex-col justify-center items-center">
+        <button className={`service-button ${buttonClass1} w-60`} onClick={() => { setService("Check-up"); setButtonDisabled1(false); handleColor("button1"); }}>Check-up</button>
+        <button className={`service-button ${buttonClass2} w-60`} onClick={() => { setService("Medical Consultation"); setButtonDisabled1(false); handleColor("button2"); }}>Medical Consultation</button>
+        <button className={`service-button ${buttonClass3} w-60`} onClick={() => { setService("Pre-op evaluation"); setButtonDisabled1(false); handleColor("button3"); }}>Pre-op evaluation</button>
+      </div>
+      <form onSubmit={handleDateSubmit} className="flex flex-col items-center">
+        <label className="text-center" htmlFor="dateofbirth"><h3>Choose the date</h3></label>
+        <input onChange={handleDate} type="date" name="dateofbirth" id="dateofbirth" />
+        <button className="red-item" disabled={blocked}>Check this date</button>
+      </form>
+      <button><a className="red-item" href="/">Go back</a></button>
+    </div>
+  )}
+</>
   );
 };
 
