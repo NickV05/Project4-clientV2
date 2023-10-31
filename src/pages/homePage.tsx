@@ -457,7 +457,7 @@ getBlogs();
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="/booking/ada-wong" className="text-black group-hover:text-white">Ada Wong</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/ada-wong" className="text-black group-hover:text-white">Ada Wong</a></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Sport Geneticist</p>
                                 </div>
                             </div> 
@@ -476,7 +476,7 @@ getBlogs();
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="/booking/evelyn-marcus" className="text-black group-hover:text-white">Evelyn Marcus</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/evelyn-marcus" className="text-black group-hover:text-white">Evelyn Marcus</a></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Neurologist</p>
                                 </div>
                             </div> 
@@ -490,7 +490,7 @@ getBlogs();
                                     <img src="/lady.jpg" alt="team" className="w-full"/>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="/booking/olivia-doe" className="text-black group-hover:text-white">Olivia Doe</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/olivia-doe" className="text-black group-hover:text-white">Olivia Doe</a></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Oncologyst</p>
                                 </div>
                             </div> 
@@ -504,7 +504,7 @@ getBlogs();
                                     <img src="/doc.jpg" alt="team" className="w-full"/>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="/booking/sarah-hope" className="text-black group-hover:text-white">Sarah Hope</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/sarah-hope" className="text-black group-hover:text-white">Sarah Hope</a></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Surgeon</p>
                                 </div>
                             </div> 
@@ -523,7 +523,7 @@ getBlogs();
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="/booking/sam-isaacs" className="text-black group-hover:text-white">Sam Isaacs</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/sam-isaacs" className="text-black group-hover:text-white">Sam Isaacs</a></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Lead Pharmacist</p>
                                 </div>
                             </div> 
