@@ -213,9 +213,7 @@ a, button {
   @apply absolute top-0 left-0 h-full;
 }
 
-.single_services {
-  @apply border-2 border-dashed border-border-color rounded-xl py-13 px-6 sm:py-6 sm:px-4 md:py-13 md:px-6 transition-all duration-300  hover:border-theme-color hover:shadow;
-}
+
 .services_icon {
   @apply relative inline-block;
 }
@@ -226,12 +224,7 @@ a, button {
   fill: #fff1f1;
   @apply transition-all duration-300;
 }
-.single_services:hover .services_icon i {
-  @apply text-white;
-}
-.single_services:hover .services_shape {
-  @apply fill-current text-theme-color;
-}
+
 
 .about_image {
   @apply lg:absolute top-0 left-0 w-full lg:w-1/2 h-auto lg:h-full mx-auto mt-13 lg:mt-0 px-5 lg:px-0; 

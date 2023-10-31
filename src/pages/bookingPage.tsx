@@ -74,6 +74,7 @@ const { user } = authContext;
     }
   }
 
+
   return (
     <>
       {requestDone ? (
@@ -116,7 +117,7 @@ const { user } = authContext;
           <div className ="flex flex-col">
             <button className={buttonClass1} onClick={() => {setService("Check-up"); setButtonDisabled1(false); handleColor("button1")}}>Check-up</button>
             <button className={buttonClass2} onClick={() => {setService("Medical Consultation");setButtonDisabled1(false);handleColor("button2")}}>Medical Consultation</button>
-            <button className={buttonClass3} onClick={() => {setService("Preoperative Assessment");setButtonDisabled1(false);handleColor("button3")}}>Preoperative Assessment</button>
+            <button className={buttonClass3} onClick={() => {setService("Pre-op evaluation");setButtonDisabled1(false);handleColor("button3")}}>Pre-op evaluation</button>
           </div>
           <form
             onSubmit={handleDateSubmit}

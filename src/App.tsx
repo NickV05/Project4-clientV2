@@ -4,6 +4,8 @@ import HomePage from "./pages/homePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import BookingPage from "./pages/bookingPage";
+import ReschedulePage from "./pages/reschedulePage";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -27,9 +29,10 @@ function App() {
       <Routes>     
 
         <Route element={<LoggedIn />}>
-
+        <Route path ="/reschedule/:id" element={<ReschedulePage/>}/>
         <Route path ="/booking/:doctorName" element={<BookingPage/>}/>
         <Route path ="/" element={<HomePage/>}/>
+        <Route path ="/profile/:id" element={<Profile/>}/>
 
         </Route>
 

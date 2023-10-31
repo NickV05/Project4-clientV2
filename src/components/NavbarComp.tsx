@@ -1,12 +1,13 @@
 import { AuthContext} from "../context/auth.context";
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
 const NavbarComp = () => {
 const authContext = useContext(AuthContext);
     if (!authContext) {
       return null;
     }
-const { logOutUser, isLoggedIn } = authContext;
+const { logOutUser, isLoggedIn, user } = authContext;
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 const toggleMenu = () => {
@@ -42,25 +43,10 @@ const toggleMenu = () => {
            shadow " id="navbarOne">
               <ul id="nav" className="items-center content-start mr-auto lg:justify-end navbar-nav flex flex-wrap">
                   <li className="nav-item ml-5 lg:ml-11">
-                      <a className="page-scroll active" href="/">Home</a>
+                      <Link onClick={()=>{ toggleMenu();}} className="page-scroll" to="/">Home</Link>
                   </li>
                   <li className="nav-item ml-5 lg:ml-11">
-                      <a className="page-scroll" href="#about">About</a>
-                  </li>
-                  <li className="nav-item ml-5 lg:ml-11">
-                      <a className="page-scroll" href="#services">Services</a>
-                  </li>
-                  <li className="nav-item ml-5 lg:ml-11">
-                      <a className="page-scroll" href="#work">News</a>
-                  </li>
-                  <li className="nav-item ml-5 lg:ml-11">
-                      <a className="page-scroll" href="#team">Team</a>
-                  </li>
-                  <li className="nav-item ml-5 lg:ml-11">
-                      <a className="page-scroll" href="#blog">Blog</a>
-                  </li>
-                  <li className="nav-item ml-5 lg:ml-11">
-                      <a className="page-scroll" href="#contact">Contact</a>
+                      <Link onClick={()=>{ toggleMenu();}} className="page-scroll" to={user ? `profile/${user._id}` : '#'}>Appointments</Link>
                   </li>
                    <li className="nav-item ml-5 lg:ml-11">
                       <button className="page-scroll"  onClick={() => {
@@ -78,26 +64,12 @@ const toggleMenu = () => {
                             lg:bg-transparent shadow lg:shadow-none" id="navbarOne">
                                 <ul id="nav" className="items-center content-start mr-auto lg:justify-end navbar-nav lg:flex">
                                     <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll active" href="/">Home</a>
+                                        <Link className="page-scroll" to="/">Home</Link>
                                     </li>
                                     <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll" href="#about">About</a>
+                                        <Link className="page-scroll" to={user ? `profile/${user._id}` : '#'}>Appointments</Link>
                                     </li>
-                                    <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll" href="#services">Services</a>
-                                    </li>
-                                    <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll" href="#work">News</a>
-                                    </li>
-                                    <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll" href="#team">Team</a>
-                                    </li>
-                                    <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll" href="#blog">Blog</a>
-                                    </li>
-                                    <li className="nav-item ml-5 lg:ml-11">
-                                        <a className="page-scroll" href="#contact">Contact</a>
-                                    </li>
+                                    
                                      <li className="nav-item ml-5 lg:ml-11">
                                         <button className="page-scroll"  onClick={logOutUser}><a>Log out</a></button>
                                     </li>
