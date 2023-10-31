@@ -5,6 +5,7 @@ import '../index.css'
 import '../tailwindcss.css'
 import { useState, useEffect } from 'react'
 import { get, post } from '../services/authService'
+import { Link } from 'react-router-dom'
 
 interface Creator {
     fullName: string ;
@@ -457,7 +458,7 @@ getBlogs();
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/ada-wong" className="text-black group-hover:text-white">Ada Wong</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><Link to="/booking/ada-wong" className="text-black group-hover:text-white">Ada Wong</Link></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Sport Geneticist</p>
                                 </div>
                             </div> 
@@ -476,7 +477,7 @@ getBlogs();
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/evelyn-marcus" className="text-black group-hover:text-white">Evelyn Marcus</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><Link to="/booking/evelyn-marcus" className="text-black group-hover:text-white">Evelyn Marcus</Link></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Neurologist</p>
                                 </div>
                             </div> 
@@ -490,7 +491,7 @@ getBlogs();
                                     <img src="/lady.jpg" alt="team" className="w-full"/>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/olivia-doe" className="text-black group-hover:text-white">Olivia Doe</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><Link to="/booking/olivia-doe" className="text-black group-hover:text-white">Olivia Doe</Link></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Oncologyst</p>
                                 </div>
                             </div> 
@@ -504,7 +505,7 @@ getBlogs();
                                     <img src="/doc.jpg" alt="team" className="w-full"/>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/sarah-hope" className="text-black group-hover:text-white">Sarah Hope</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><Link to="/booking/sarah-hope" className="text-black group-hover:text-white">Sarah Hope</Link></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Surgeon</p>
                                 </div>
                             </div> 
@@ -523,7 +524,7 @@ getBlogs();
                                     </ul>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="booking/sam-isaacs" className="text-black group-hover:text-white">Sam Isaacs</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><Link to="/booking/sam-isaacs" className="text-black group-hover:text-white">Sam Isaacs</Link></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Lead Pharmacist</p>
                                 </div>
                             </div> 
@@ -537,7 +538,7 @@ getBlogs();
                                     <img src="/chang.jpg" alt="team" className="w-full"/>
                                 </div>
                                 <div className="team_content py-5 px-8 relative">
-                                    <h4 className="team_name text-xl md:text-2xl"><a href="/booking/ruby-chang" className="text-black group-hover:text-white">Ruby Chang</a></h4>
+                                    <h4 className="team_name text-xl md:text-2xl"><Link to="/booking/ruby-chang" className="text-black group-hover:text-white">Ruby Chang</Link></h4>
                                     <p className="mt-2 transition-all duration-300 group-hover:text-white">Dermatologyst</p>
                                 </div>
                             </div> 
