@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { get } from "../services/authService";
-import { useParams} from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import { Link } from "react-router-dom";
 
 
@@ -12,6 +12,7 @@ const Profile = () => {
   const { id } = useParams();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isSmallScreen = windowWidth <= 768; 
+  const navigate = useNavigate();
 
   const getAppointments = () => {
     get(`/pageData/getAppointments/${id}`)
@@ -32,7 +33,7 @@ const Profile = () => {
 
     get(`/pageData/cancel/${appointmentId}`)
     setTimeout(() => {
-        window.location.reload();
+        navigate("/")
     }, 2000);
 
   }
