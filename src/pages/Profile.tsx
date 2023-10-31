@@ -162,7 +162,7 @@ const Profile = () => {
           )}
         </div>
   
-        <div className="appointments flex flex-col justify-start">
+        <div className="appointments flex flex-col items-center">
           <h2 className="section-title text-center">Previous Appointments</h2>
           {previousAppointments.length > 0 ? (
             previousAppointments.map((appointment: any) => (
@@ -317,7 +317,7 @@ const Profile = () => {
           )}
         </div>
   
-        <div className="appointments flex flex-col justify-start">
+        <div className="appointments flex flex-col items-center">
           <h2 className="section-title text-center">Previous Appointments</h2>
           {previousAppointments.length > 0 ? (
             previousAppointments.map((appointment: any) => (
