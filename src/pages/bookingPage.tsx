@@ -1,136 +1,183 @@
+import * as React from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Paper from "@mui/material/Paper";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import AddressForm from "../components/AdressForm";
+import PaymentForm from "../components/PaymentForm";
+import Review from "../components/Review";
 import { useState, useContext } from "react";
 import { post } from "../services/authService";
-import {useParams} from "react-router-dom";
-import { AuthContext} from "../context/auth.context";
+import { useParams, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
+
+const steps = ["Appointment info", "Time details", "Review"];
 
 const bookingPage = () => {
   const [date, setDate] = useState(new Date());
-  const [hours, setHours] = useState<string[]>([]); 
-  const [requestDone, setRequest] = useState(false);
-  const {doctorName} = useParams<{doctorName: string}>()
+  const [hours, setHours] = useState<string[]>([]);
+  const { doctorName } = useParams<{ doctorName: any }>();
   const [service, setService] = useState<string>("");
   const [buttonDisabled1, setButtonDisabled1] = useState(true);
   const [buttonDisabled2, setButtonDisabled2] = useState(true);
-  const [confirm, setConfirm] = useState(false);
   const [selectedHour, setSelected] = useState("");
-  const [message, setMessage] = useState("");
-  const [buttonClass1, setButtonClass1] = useState('red-item');
-  const [buttonClass2, setButtonClass2] = useState('red-item');
-  const [buttonClass3, setButtonClass3] = useState('red-item');
+  const [buttonClass1, setButtonClass1] = useState("red-item");
+  const [buttonClass2, setButtonClass2] = useState("red-item");
+  const [buttonClass3, setButtonClass3] = useState("red-item");
   const isoDate = date.toISOString();
+  const navigate = useNavigate();
   const today = new Date();
-  const blocked = !(buttonDisabled1 === false && buttonDisabled2 === false && isoDate > today.toISOString());
+  const blocked = !(
+    buttonDisabled1 === false &&
+    buttonDisabled2 === false &&
+    isoDate > today.toISOString()
+  );
   const authContext = useContext(AuthContext);
-    if (!authContext) {
-      return null;
-    }
-const { user } = authContext;
-  
+  if (!authContext) {
+    return null;
+  }
+  const { user } = authContext;
 
-  const handleDate = (e: React.ChangeEvent<HTMLInputElement>) =>{
+  const getStepContent = (step: number) => {
+    switch (step) {
+      case 0:
+        return (
+          <AddressForm
+            buttonClass1={buttonClass1}
+            setService={setService}
+            setButtonDisabled1={setButtonDisabled1}
+            handleColor={handleColor}
+            buttonClass2={buttonClass2}
+            buttonClass3={buttonClass3}
+            handleDateSubmit={handleDateSubmit}
+            handleDate={handleDate}
+            handleNext={handleNext}
+            blocked={blocked}
+          />
+        );
+      case 1:
+        return <PaymentForm handleTime={handleTime} hours={hours} />;
+      case 2:
+        return (
+          <Review
+            doctorName={doctorName}
+            selectedHour={selectedHour}
+            service={service}
+            confirmTime={confirmTime}
+          />
+        );
+      default:
+        throw new Error("Unknown step");
+    }
+  };
+
+  const handleDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDate(new Date(e.target.value));
     setButtonDisabled2(false);
-  }
+  };
 
-  const handleDateSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleDateSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const isoDate = date.toISOString();
     console.log("DATE ==>", isoDate);
-    post("/pageData/getTime", { date: isoDate, doctorName: doctorName})
-      .then((response) => {
+    post("/pageData/getTime", { date: isoDate, doctorName: doctorName }).then(
+      (response) => {
         console.log("RESPONSE ===>", response.data);
         setHours(response.data);
-        setRequest(true);
-      });
+      }
+    );
   };
-
 
   const confirmTime = () => {
     const isoDate = date.toISOString();
-    post("/pageData/confirm",{time:selectedHour, service:service, doctorName: doctorName, date:isoDate, user:user})
-    .then((response) => {
-      console.log("RESPONSE ===>", response.data.message)
-      setMessage(response.data.message)
-    })
+    post("/pageData/confirm", {
+      time: selectedHour,
+      service: service,
+      doctorName: doctorName,
+      date: isoDate,
+      user: user,
+    }).then((response) => {
+      console.log("RESPONSE ===>", response.data.message);
+      if (user != null) {
+        navigate(`/profile/${user._id}`);
+      }
+    });
+  };
 
-  }
-
-  const handleTime = (time:any) => {
+  const handleTime = (time: any) => {
     setSelected(time);
-    setConfirm(true);
-  }
+    handleNext();
+  };
 
-  const handleColor = (button:any) => {
+  const handleColor = (button: any) => {
     if (button === "button1") {
-      setButtonClass1('red-item-clicked');
-      setButtonClass2('red-item');
-      setButtonClass3('red-item');
+      setButtonClass1("red-item-clicked");
+      setButtonClass2("red-item");
+      setButtonClass3("red-item");
     } else if (button === "button2") {
-      setButtonClass1('red-item');
-      setButtonClass2('red-item-clicked');
-      setButtonClass3('red-item');
+      setButtonClass1("red-item");
+      setButtonClass2("red-item-clicked");
+      setButtonClass3("red-item");
     } else if (button === "button3") {
-      setButtonClass1('red-item');
-      setButtonClass2('red-item');
-      setButtonClass3('red-item-clicked');
+      setButtonClass1("red-item");
+      setButtonClass2("red-item");
+      setButtonClass3("red-item-clicked");
     }
-  }
+  };
 
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleNext = () => {
+    setActiveStep(activeStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep(activeStep - 1);
+  };
 
   return (
-    <>
-  {requestDone ? (
-    <>
-      {!confirm ? (
-        <div className="mt-14 flex flex-col">
-          <ul className="flex flex-col navbar-nav">
-            {hours.map((time) => (
-              <li className="nav-item text-center" key={time}>
-                <button onClick={() => handleTime(time)}>
-                  <a className="page-scroll">{time}</a>
-                </button>
-              </li>
-            ))}
-          </ul>
-          <button className="red-item" onClick={() => setRequest(false)}>Go back</button>
-        </div>
-      ) : (
-        <>
-          {!message ? (
-            <div className="mt-14 flex flex-col">
-              <h3 className="text-center">Time: {selectedHour}</h3>
-              <h3 className="text-center">Doctor: {doctorName ? doctorName.replace(/\b\w/g, match => match.toUpperCase()).replace(/-/g, ' ') : ''}</h3>
-              <h3 className="text-center">Service: {service}</h3>
-              <button className="red-item" onClick={confirmTime}>Confirm Appointment</button>
-              <button className="red-item" onClick={() => setConfirm(false)}>Go back</button>
-            </div>
-          ) : (
-            <div className="mt-14 flex flex-col">
-              <h1 className="text-center">{message}</h1>
-              <button><a className="red-item" href="/">Go back</a></button>
-            </div>
-          )}
-        </>
-      )}
-    </>
-  ) : (
-    <div className="mt-14 flex flex-col justify-center">
-      <h1 className="text-center">Appointment Booking</h1>
-      <h3 className="text-center">Choose service</h3>
-      <div className="flex flex-col justify-center items-center">
-        <button className={`service-button ${buttonClass1} w-60`} onClick={() => { setService("Check-up"); setButtonDisabled1(false); handleColor("button1"); }}>Check-up</button>
-        <button className={`service-button ${buttonClass2} w-60`} onClick={() => { setService("Medical Consultation"); setButtonDisabled1(false); handleColor("button2"); }}>Medical Consultation</button>
-        <button className={`service-button ${buttonClass3} w-60`} onClick={() => { setService("Pre-op evaluation"); setButtonDisabled1(false); handleColor("button3"); }}>Pre-op evaluation</button>
-      </div>
-      <form onSubmit={handleDateSubmit} className="flex flex-col items-center">
-        <label className="text-center" htmlFor="dateofbirth"><h3>Choose the date</h3></label>
-        <input onChange={handleDate} type="date" name="dateofbirth" id="dateofbirth" />
-        <button className="red-item" disabled={blocked}>Check this date</button>
-      </form>
-      <button><a className="red-item" href="/">Go back</a></button>
+    <div className="mt-15">
+      <React.Fragment>
+        <CssBaseline />
+
+        <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+          <Paper
+            variant="outlined"
+            sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
+          >
+            <Typography component="h1" variant="h4" align="center">
+              Appointment Booking
+            </Typography>
+            <Stepper
+              activeStep={activeStep}
+              sx={{ pt: 3, pb: 5}}
+            >
+              {steps.map((label) => (
+                <Step key={label} >
+                  <StepLabel>{label}</StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+
+            <React.Fragment>
+              {getStepContent(activeStep)}
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                {activeStep !== 0 && (
+                  <Button onClick={handleBack} sx={{ mt: 3, color: "red" }}>
+                    Back
+                  </Button>
+                )}
+              </Box>
+            </React.Fragment>
+          </Paper>
+        </Container>
+      </React.Fragment>
     </div>
-  )}
-</>
   );
 };
 

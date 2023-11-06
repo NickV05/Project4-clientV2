@@ -1321,6 +1321,10 @@ video {
   margin-top: 100px;
 }
 
+.mt-15{
+  margin-top: 120px;
+}
+
 .mr-auto{
   margin-right: auto;
 }
@@ -1929,6 +1933,10 @@ a, button {
 .navbar-nav .nav-item a:hover{
   --tw-text-opacity: 1;
   color: rgba(249, 79, 79, var(--tw-text-opacity));
+}
+
+.custom-active {
+  color: red; 
 }
 
 .red-item{
