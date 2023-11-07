@@ -23,7 +23,7 @@ const reschedulePage = () => {
   const [hours, setHours] = useState<string[]>([]);
   const { id } = useParams<{ id: string }>();
   const [service, setService] = useState<string>("");
-  const [buttonDisabled1, setButtonDisabled1] = useState(true);
+  const [, setButtonDisabled1] = useState(true);
   const [buttonDisabled2, setButtonDisabled2] = useState(true);
   const [doctorName, setDoctorName] = useState<string>("");
   const [selectedHour, setSelected] = useState("");
