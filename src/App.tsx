@@ -6,9 +6,16 @@ import LoginPage from "./pages/LoginPage";
 import BookingPage from "./pages/bookingPage";
 import ReschedulePage from "./pages/reschedulePage";
 import Profile from "./pages/Profile";
+import { useEffect, useState } from "react";
 
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
 
   const getToken = () => {
     return localStorage.getItem('authToken')
@@ -21,6 +28,11 @@ function App() {
   const NotLoggedIn = () => {
     return !getToken() ? <Outlet /> : <Navigate to='/' />
   }
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
 
   return (
     <div className="">
